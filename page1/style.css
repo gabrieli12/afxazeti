@@ -1,0 +1,308 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ბექგრაუნდი ყველაფერი ერთად */
+body,html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+    scrollbar-width: none;
+    overflow-x: hidden;
+}
+.Section_top{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    background-image: url(/images/background3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    animation: change 25s infinite ease-in-out;
+    
+}
+
+
+/* სათაური */
+.title{
+    font-size: 3em;
+    animation: title 25s infinite ease-in-out;
+    transition: 50;
+    backdrop-filter: blur(80px);
+    text-shadow: 5px 5px 10px rgba(1, 18, 94, 0.863);
+    height: 100px;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
+#title{
+    width: 100%;
+}
+
+/* უკნა ფონზე მუსიკა */
+.music{
+    position: relative;
+    width: 300px; 
+    height: 60px;
+    border-radius: 50px;
+    transform: translate(5px,-100px);
+}
+audio{
+    z-index: 3;
+    position: relative;
+    border: 3px solid black;
+    width: 230px;
+    height: 40px;
+    border-radius: 50px;
+    box-shadow: 0px 1px 50px rgb(5, 43, 209);
+    animation: audio 25s infinite ease-in-out;
+}
+
+
+/* შემდეგ გვერდზე გადასვლის ღილაკის სტილები */
+.nextpage{
+    animation: nextPage 25s infinite ease-in-out;
+    position: relative;
+    align-items: left;
+    background: white;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    padding: 10px 30px;
+    transition: 0.5s;
+}
+.nextpage:hover{
+    background: var(--clr);
+    color: var(--clr);
+    letter-spacing: 0.35em;
+    box-shadow: 0 0 35px var(--clr);
+}
+.nextpage::before{
+    content: '';
+    backdrop-filter: blur(80px);
+    position: absolute;
+    inset: 2px;
+    background: rgb(36, 35, 35);
+}
+.nextpage span{
+    position: relative;
+    z-index: 1;
+}
+
+.nextpage i{
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+.nextpage i::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 80%;
+    width: 10px;
+    height: 4px;
+    background: black;
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+.nextpage:hover i::before{
+    width: 20px;
+    left: 20%;
+}
+
+.nextpage i::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 10px;
+    height: 4px;
+    background: black;
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+.nextpage:hover i::after{
+    width: 20px;
+    left: 80%;
+}
+.next{
+    transform: translate(1410px,-60px);
+}
+
+
+/* ვიდეო */
+.video-title{
+    margin-top: 20px;
+    transform: translate(160px, 20px);
+}
+.video1{
+    position: fixed;
+
+    margin: 10px;
+    width: 500px;
+    height: 400px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.589), rgba(255, 255, 255, 0.384));
+    backdrop-filter: blur(50px);
+    border: 5px solid black;
+}
+video{
+    margin-top: 70px;
+    justify-content: center;
+    align-content: center;
+    border: 5px solid black;
+    width: 400px;
+    height: 225px;
+    transform: translateX(45px);
+}
+
+
+/* რუკა */
+.ruka{
+    margin-top: 10px;
+    position: fixed;
+    width: 500px;
+    height: 800;
+    border: 5px solid black;
+    transform: translateX(330px);
+}
+
+/* ტექსტი */
+
+.text1{
+    padding: 20px;
+    width: 570px;
+    position: relative;
+    left: 540px;
+    backdrop-filter: blur(80px);
+    font-size: 30px;
+    transform: translateY(200px);
+
+}
+.title1{
+    transform: translateX(140px);
+}
+
+p{
+    position: relative;
+    font-size: 30px;
+
+}
+.image3{
+    position: absolute;
+}
+
+
+@keyframes change{
+    0%
+    {
+        background-image: url(/images/background1.jpg);
+    }
+    20%
+    {
+        background-image: url(/images/background2.jpg);
+    }
+    40%
+    {
+        background-image: url(/images/background3.jpg);
+    }
+    60%
+    {
+        background-image: url(/images/background4.jpg);
+    }
+    80%
+    {
+        background-image: url(/images/background5.jpg);
+    }
+    100%
+    {
+        background-image: url(/images/background1.jpg);
+    }
+}
+@keyframes title{
+    0%
+    {
+        text-shadow: 5px 5px 10px black;
+    }
+    20%
+    {
+        text-shadow: 5px 5px 10px darkblue;
+    }
+    40%
+    {
+        text-shadow: 5px 5px 10px darkgreen;
+    }
+    60%
+    {
+        text-shadow: 5px 5px 10px darkred;
+    }
+    80%
+    {
+        text-shadow: 5px 5px 10px cyan;
+    }
+    100%
+    {
+        text-shadow: 5px 5px 10px black;
+    }
+}
+@keyframes audio{
+    0%
+    {
+        box-shadow: 0px 1px 50px black;
+    }
+    20%
+    {
+        box-shadow: 0px 1px 50px darkblue;
+    }
+    40%
+    {
+        box-shadow: 0px 1px 50px darkgreen;
+    }
+    60%
+    {
+        box-shadow: 0px 1px 50px darkred;
+    }
+    80%
+    {
+        box-shadow: 0px 1px 50px cyan;
+    }
+    100%
+    {
+        box-shadow: 0px 1px 50px black;
+    }
+}
+@keyframes nextPage{
+    0%
+    {
+        box-shadow: 0px 1px 50px black;
+    }
+    20%
+    {
+        box-shadow: 0px 1px 50px darkblue;
+    }
+    40%
+    {
+        box-shadow: 0px 1px 50px darkgreen;
+    }
+    60%
+    {
+        box-shadow: 0px 1px 50px darkred;
+    }
+    80%
+    {
+        box-shadow: 0px 1px 50px cyan;
+    }
+    100%
+    {
+        box-shadow: 0px 1px 50px black;
+    }
+}
